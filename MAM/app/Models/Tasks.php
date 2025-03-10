@@ -22,7 +22,7 @@ class Tasks extends Model
     public function updateTask($id, $record) {
         $updatedRecord = DB::transaction(function() use ($record, $id) {
             return $this->where('id', $id)->update([
-                'name' => $record['name'],
+                'title' => $record['title'],
                 'description' => $record['description'],
             ]);
         });
